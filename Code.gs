@@ -2,9 +2,9 @@ const SPREADSHEET_ID   = ''; // id of the sheet that contains the attendees data
 const CERTS_FOLDER_ID  = ''; // id of the folder in which certificates will be stored
 const CERT_SLIDE_ID    = ''; // id of the google slide certificate
 
-const CHECKBOX_PLACEHOLDER    = 'name here'; // the placeholder text of the checkbox we want to change. e.g. -> "name here".
-const CHECKBOX_MAX_CHARACTERS = 22; // manually test and specify the max number of characters the textbox can fit without changing its shape
-const CHECKBOX_FONT_SIZE      = 65; // font size of the name checkbox
+const TEXTBOX_PLACEHOLDER    = 'name here'; // the placeholder text of the textbox we want to change. e.g. -> "name here".
+const TEXTBOX_MAX_CHARACTERS = 22; // manually test and specify the max number of characters the textbox can fit without changing its shape
+const TEXTBOX_FONT_SIZE      = 65; // font size of the name textbox
 
 const NAME_COL  = 2; // the name column index in the sheet. starts from zero.
 const EMAIL_COL = 4; // the email column index in the sheet. starts from zero.
@@ -25,7 +25,7 @@ function main() {
   const cert_template_slide  = SlidesApp.openById(CERT_SLIDE_ID).getSlides()[0];
 
   const name_textbox_idx = findTextBoxByName(
-    cert_template_slide, CHECKBOX_PLACEHOLDER
+    cert_template_slide, TEXTBOX_PLACEHOLDER
   );
   const textbox_font_size = cert_template_slide
     .getShapes()[name_textbox_idx]
@@ -86,10 +86,10 @@ function prettifyName(text) {
 
 function writeName(textbox, name) {
   textbox.setContentAlignment(SlidesApp.ContentAlignment.BOTTOM);
-  var maxWidth  = CHECKBOX_FONT_SIZE * (CHECKBOX_MAX_CHARACTERS-1); // minus one just in case
+  var maxWidth  = TEXTBOX_FONT_SIZE * (TEXTBOX_MAX_CHARACTERS-1); // minus one just in case
 
   var nameLength = name.length;
-  var newFontSize = Math.min(Math.floor(maxWidth/nameLength) - 3, CHECKBOX_FONT_SIZE);
+  var newFontSize = Math.min(Math.floor(maxWidth/nameLength) - 3, TEXTBOX_FONT_SIZE);
   
   Logger.log('Name-Length: [%d], Adjusted-Font-Size: [%d]', nameLength, newFontSize);
 
