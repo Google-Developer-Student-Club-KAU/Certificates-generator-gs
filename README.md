@@ -2,6 +2,7 @@
 A google apps script that generates certificates from a spreadsheet of attendee data and a Google Slides certificate template (exported from canva).
 
 ## Setup:
+Note: you must export the certificate template as `.pttx` and then open it and save it with Google Slides.
   - Create a copy of this script: Open Google Apps Script (https://script.google.com) and paste the provided code into a new project.
   - Export the certificate from Canva to Google Drive as `.pttx`:
     - Open the file using Google Slides.
