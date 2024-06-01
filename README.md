@@ -7,7 +7,7 @@ Note: you must export the certificate template as `.pttx` and then open it and s
   - Export the certificate from Canva to Google Drive as `.pttx`:
     - Open the file using Google Slides.
     - **THEN** go to *File* > *Save as Google Slides*.
-    - That's it, grap the id of the file to use it in the code.
+    - That's it! Grab the id of the file to use it in the code.
 
 ## Replace placeholders:
 `SPREADSHEET_ID`: Id of the sheet that contains the attendees data.<br>
