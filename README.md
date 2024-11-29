@@ -20,7 +20,6 @@ Note: you must export the certificate template as `.pttx` and then open it and s
 Run the script. The script will generate a PDF certificate for each attendee listed in your spreadsheet and place them in the Drive folder.
 
 
-
 ### Additional Notes:
 The script assumes the `name` & `email` data are read from the 2nd and 4th columns of your spreadsheet, respectively. Make sure to change their indexes in the code if needed.
 
